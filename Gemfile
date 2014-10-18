@@ -22,6 +22,8 @@ gem 'arel-helpers'
 gem 'puma', ">= 2.0"
 gem 'omniauth-github'
 gem 'activerecord-session_store'
+gem 'secure_headers'
+gem 'safe_cookies'
 
 group :development do
   # gem 'better_errors'

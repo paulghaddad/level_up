@@ -37,5 +37,8 @@ module Levelup
     # The default locale is :en and all translations from
     # config/locales/*.rb,yml are auto loaded.
     # config.i18n.default_locale = :de
+
+    require 'safe_cookies'
+    config.middleware.insert_before ActionDispatch::Cookies, SafeCookies::Middleware
   end
 end
