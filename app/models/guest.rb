@@ -8,7 +8,11 @@ class Guest
   end
 
   def name
-    # NOOP
+    "Guest"
+  end
+
+  def email
+    "test@test.com"
   end
 
   def signed_in?
@@ -21,6 +25,10 @@ class Guest
 
   def roles
     Role.none
+  end
+
+  def has_role?(_role)
+    false
   end
 
   def has_completed?(_skill)

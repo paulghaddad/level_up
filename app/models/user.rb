@@ -13,8 +13,11 @@ class User < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :email
 
-  scope :by_activity_date, -> { order("updated_at desc") }
+  scope :by_activity_date, -> { order("users.updated_at desc") }
   scope :by_auth, ->(auth) { where(provider: auth.provider, uid: auth.uid) }
+  scope :with_completions, lambda {
+    includes(:completions).where.not(completions: { id: nil })
+  }
 
   def has_completed?(skill)
     skills.include? skill
@@ -35,10 +38,10 @@ class User < ActiveRecord::Base
   end
 
   def self.existing_user_from_omniauth(auth)
-    user = where(email: auth.info.email)
-    return unless user.exists?
+    user = find_by(email: auth.info.email)
+    return unless user
 
-    user.first.tap do |new_user|
+    user.tap do |new_user|
       new_user.provider = auth.provider
       new_user.uid = auth.uid
       new_user.save!

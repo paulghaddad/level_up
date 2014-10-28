@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_filter :miniprofiler
 
   ensure_security_headers(
     x_frame_options: "DENY",
@@ -17,4 +18,10 @@ class ApplicationController < ActionController::Base
     super || Guest.new
   end
   helper_method :current_user
+
+  private
+
+  def miniprofiler
+    Rack::MiniProfiler.authorize_request if current_user.has_role? 'admin'
+  end
 end
