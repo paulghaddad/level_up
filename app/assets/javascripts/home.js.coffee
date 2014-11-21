@@ -15,3 +15,5 @@ init_home = ->
 
 $(document).ready(init_home)
 $(document).on('page:load', init_home)
+
+$(document).ready($.material.init);

@@ -1,3 +1,7 @@
+.navbar-brand a {
+  color:#fff;
+}
+
 .alert-notice {
   background-color: #28b62c;
   border-color: #24a528;
@@ -29,7 +33,7 @@
   margin-bottom:10px;
 }
 
-.feedback-link {
+.btn.feedback-link {
   position:fixed;
   bottom:0px;
   right:3em;
@@ -37,16 +41,17 @@
   border:1px solid #ccc;
   border-width:1px 1px 0px;
   border-radius:4px 4px 0px 0px;
+  margin-bottom:0px;
+  background-color:#fff;
 
   &:hover {
     border-bottom-width:0px;
+    background-color:#fff;
   }
 }
 
 footer {
-  /*background:#1a1a1a; figure out sticky footer first */
   margin-top:60px;
   padding:40px 0px 20px;
   border-top:1px solid #e5e5e5;
-  /* color:#999;*/
 }
