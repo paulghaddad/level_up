@@ -1,4 +1,5 @@
 :javascript
+  $(function() { site_alerts.map(function(msg) { $.snackbar({content: msg}); }); });
   site_alerts = []
 - flash.each do |_, msg|
   :javascript
