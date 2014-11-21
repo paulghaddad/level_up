@@ -9,15 +9,12 @@
     = stylesheet_link_tag    "//fonts.googleapis.com/css?family=Patrick+Hand+SC"
 
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
   %body
     = render partial: 'layouts/navigation'
 
     .container 
-      - flash.each do |name, msg|
-        %div{class: "alert alert-#{name}"}= msg
 
       = yield
 
@@ -30,7 +27,10 @@
           Pull requests emphatically welcome <a href='https://github.com/jmmastey/level_up'>on Github</a>.
 
     = render partial: "layouts/feedback_modal"
-    = javascript_include_tag "//google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=default&lang=bash"
+    = render partial: "layouts/flash"
+    = javascript_include_tag "application", "data-turbolinks-track" => true
     = javascript_include_tag "//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"
     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.1.6/js/material.min.js"
     = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.1.6/js/ripples.min.js"
+    :javascript
+      $(function() { site_alerts.map(function(msg) { $.snackbar({content: msg}); }); });
