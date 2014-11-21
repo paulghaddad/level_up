@@ -8,4 +8,10 @@
       = render partial: 'difficulty' if @module.difficulty
       .bs-component
         .panel.panel-basic
-          = render partial: "modules/#{@module.handle}_resources"
+          .panel-heading
+            %h4 More Resources
+          .panel-body
+            = render partial: "modules/#{@module.handle}_resources"
+
+        .panel.panel-basic
+          = render partial: "modules/exercises"
