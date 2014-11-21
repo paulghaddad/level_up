@@ -1,7 +1,8 @@
 %table.table.table-striped.table-hover
-  %tr
-    %th Category
-    %th{colspan: 2} Completion
+  %thead
+    %tr
+      %th Category
+      %th{colspan: 2} Completion
   - @user.summary.for_user.each do |category|
     %tr{class: category[:handle]}
       %td= category[:name]

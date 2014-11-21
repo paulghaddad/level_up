@@ -1,5 +1,12 @@
 .skill-table {
+  .panel-heading {
+    background-color:transparent;
+    border-bottom-width:0px;
+  }
+
+  table { margin-left:-8px; }
   td { white-space:nowrap; }
+  thead { display:none; }
   td.completion div.progress {
     min-width:150px;
     margin-bottom:0px;
