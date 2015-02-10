@@ -1,4 +1,4 @@
-%p You're almost there. You've knocked over every barrier in your way, and you're almost done. You're like a cop on the day he retires. But you're not going to get shot. I won't let you die, good buddy. Now that you've written some solid code, let's talk about a few more pitfalls you still need to avoid. These topics are a little scattered, but they'll each do you a lot of good. 
+%p You're almost there. You've knocked over every barrier in your way, and you're almost done. You're like a cop on the day he retires. But you're not going to get shot. I won't let you die, good buddy. Now that you've written some solid code, let's talk about a few more pitfalls you still need to avoid. These topics are a little scattered, but they'll each do you a lot of good.
 
 .page-header
   %h3 Sanity-Inducing Principles
@@ -14,7 +14,7 @@
     - e.question "Explain how YAGNI improves the quality of our code."
     - e.question "If we follow YAGNI, explain how we can still make intelligent decisions about features we may need."
     - e.question "Explain the role of proper encapsulation and loose coupling in following the convention."
-  %p Perhaps related to YAGNI, but as more of a code-organization principle, we have DRY. You've probably heard of this one before: we don't want duplication representations of knowledge in the system. 
+  %p Perhaps related to YAGNI, but as more of a code-organization principle, we have DRY. You've probably heard of this one before: we don't want duplication representations of knowledge in the system.
   %p Remember that DRY is about knowledge in your system, not just code duplication. This <a href='http://www.rubytapas.com/episodes/89-Coincidental-Duplication'>Ruby Tapas</a> has a great example of the overuse of this principle.
   = exercise_block_for "dry" do |e|
     - e.question "Name some techniques we can use to de-duplicate code."
@@ -35,7 +35,7 @@
     - e.question "Give some examples of problems you've seen (or we see) when dev and prod differ."
     - e.question "Explain why dev will never be just like prod, and how we can mitigate some of the differences."
   %p As your code operates in the wild, you'll need to keep it secure and well behaved in the face of bad input and malicious users. You'll need to either coax that data into a usable format or escape before it can do any damage.
-  %p The best resource for this is Avdi Grimm's <a href='http://www.confidentruby.com/'>Confident Ruby</a>. Find a copy in the library and review some of the patterns in it for better code.
+  %p The best resource for this is Avdi Grimm's <a href='http://www.confidentruby.com/'>Confident Ruby</a>. Find a copy in the library and review some of the patterns in it for better code. You can also read <a href='https://practicingruby.com/articles/confident-ruby'>this article</a>, which provides a summary of its practices.
   = exercise_block_for "guards" do |e|
     - e.question "Show some ways that you can make your code more accepting and robust while guarding against errors."
     - e.question "For which code is it more important to guard against errors? For which code is it less important?"
